@@ -29,9 +29,9 @@ class PositionElements {
   }
 
   randomImage() {
-    return fetch('https://source.unsplash.com/random/1920x1080').then((res) => {
-      this.imageURL = res.url
-    })
+    const randomIndex = Math.floor(Math.random() * 10) + 1; // Assuming you have 10 images named 1.jpg, 2.jpg, ..., 10.jpg
+    this.imageURL = `images/img-${randomIndex}.jpg`; // Change 'images/' to your local directory containing images
+    return Promise.resolve(); // No need for fetch, directly resolve Promise
   }
 
   async addDraggableDivs() {
